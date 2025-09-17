@@ -3,7 +3,7 @@ import PageLayout from "../../Common/PageLayout";
 import PageHeader from "../../Common/PageHeader";
 import AnimatedSection from "../../Common/AnimatedSection";
 
-export default function N_N_Flow() {
+export default function NO3_N_Flow() {
   const nitrate = useMemo(
     () => [
       {
@@ -55,7 +55,7 @@ export default function N_N_Flow() {
       <PageHeader 
         title="ES 04361.3c · 질산성질소(자외선/가시선 분광법) 플로우차트"
         subtitle="수질오염공정시험기준에 따른 전체 절차 요약 · 인쇄 친화형"
-        description="NN = Nitrate Nitrogen-UV/Visible Spectrometry-Active Carbon Adsorption method"
+        description="NO3 = Nitrate Nitrogen-UV/Visible Spectrometry-Active Carbon Adsorption method"
       />
 
         <ol className="relative space-y-5">

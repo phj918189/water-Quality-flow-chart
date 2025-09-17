@@ -1,20 +1,21 @@
 import { useState } from 'react';
-import CODMnFlowchart from './COD';
-import TN_UVVis_Oxidation_Flow from './T.N';
-import TP_UVVis_Oxidation_Flow from './T.P';
-import N_N_Flow from './N.N';
-import P_P_Flow from './P.P';
-import NH_Flow from './nH';
-import SS_Flow from './S.S';
-import Color_Flow from './Color';
-import BOD_Flow from './BOD';
-import PH_Flow from './P.H';
-import TOC_HTC_Flow from './TOC';
-import T_Flow from './T';
+import CODMnFlowchart from './nomal/COD';
+import TN_UVVis_Oxidation_Flow from './ion/T.N';
+import TP_UVVis_Oxidation_Flow from './ion/T.P';
+import N_N_Flow from './ion/N.N';
+import P_P_Flow from './ion/P.P';
+import NH_Flow from './nomal/nH';
+import SS_Flow from './nomal/S.S';
+import Color_Flow from './nomal/Color';
+import BOD_Flow from './nomal/BOD';
+import PH_Flow from './nomal/P.H';
+import TOC_HTC_Flow from './nomal/TOC';
+import T_Flow from './nomal/T';
+import T_C_Flow from './nomal/T.C';
 import TabNavigation from '../Common/TabNavigation';
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<'cod' | 'tn' | 'tp' | 'pp' | 'nn' | 'nH' | 'ss' | 'color' | 'bod' | 'PH' | 'toc' | 't'>('cod');
+  const [activeTab, setActiveTab] = useState<'cod' | 'tn' | 'tp' | 'pp' | 'nn' | 'nH' | 'ss' | 'color' | 'bod' | 'PH' | 'toc' | 't' | 'tc'>('cod');
   const tabs = [
     { id: 'cod', label: 'CODₘₙ (산성과망간산칼륨법)', mobileLabel: 'COD' },
     { id: 'tn', label: '총질소 (자외·가시선 분광법)', mobileLabel: 'TN' },
@@ -28,6 +29,7 @@ export default function Home() {
     { id: 'PH', label: '수소이온농도(PH)', mobileLabel: 'pH' },
     { id: 'toc', label: '총유기탄소(TOC)', mobileLabel: 'TOC' },
     { id: 't', label: '탁도(T)', mobileLabel: 'T' },
+    { id: 'tc', label: '총대장균군(건조필름법)', mobileLabel: 'TC' },
   ];
   
   return (
@@ -162,6 +164,16 @@ export default function Home() {
             >
               탁도(T)
             </button>
+
+            <button onClick={() => setActiveTab('tc')}
+              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
+                activeTab === 'tc'
+                  ? 'border-blue-500 text-blue-600'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+            >
+              총대장균군(건조필름법)
+            </button>
           </nav>
         </div>
       </div>
@@ -180,6 +192,7 @@ export default function Home() {
         {activeTab === 'PH' && <PH_Flow />}
         {activeTab === 'toc' && <TOC_HTC_Flow />}
         {activeTab === 't' && <T_Flow />}
+        {activeTab === 'tc' && <T_C_Flow />}
       </div>
     </div>
   );

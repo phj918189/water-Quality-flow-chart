@@ -1,7 +1,6 @@
-
-import PageLayout from "../Common/PageLayout";
-import PageHeader from "../Common/PageHeader";
-import AnimatedSection from "../Common/AnimatedSection";
+import PageLayout from "../../Common/PageLayout";
+import PageHeader from "../../Common/PageHeader";
+import AnimatedSection from "../../Common/AnimatedSection";
 
 export default function NH_Flow() {
   const sections = [
@@ -76,7 +75,7 @@ export default function NH_Flow() {
     <PageLayout>
       <PageHeader 
         title="ES 04302.1b · 노말헥산 추출물질(nH) 전용 플로우차트"
-        subtitle="수질오염공정시험기준에 따른 전체 절차 요약 · 인쇄 친화형"
+        subtitle=""
         description="nH = n-Hexane Extractable Material"
       />
 

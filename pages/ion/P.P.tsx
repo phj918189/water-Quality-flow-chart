@@ -1,7 +1,7 @@
     import { useMemo } from "react";
-import PageLayout from "../Common/PageLayout";
-import PageHeader from "../Common/PageHeader";
-import AnimatedSection from "../Common/AnimatedSection";
+import PageLayout from "../../Common/PageLayout";
+import PageHeader from "../../Common/PageHeader";
+import AnimatedSection from "../../Common/AnimatedSection";
 
 
 export default function P_P_Flow() {

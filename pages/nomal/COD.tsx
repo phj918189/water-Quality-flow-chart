@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
-import PageLayout from '../Common/PageLayout';
-import PageHeader from '../Common/PageHeader';
-import AnimatedSection from '../Common/AnimatedSection';
-import TabNavigation from "../Common/TabNavigation"; 
+import PageLayout from '../../Common/PageLayout';
+import PageHeader from '../../Common/PageHeader';
+import AnimatedSection from '../../Common/AnimatedSection';
+import TabNavigation from "../../Common/TabNavigation"; 
 
 export default function CODMnFlowchart() {
   const steps = useMemo(

@@ -16,18 +16,18 @@ import TabNavigation from '../Common/TabNavigation';
 export default function Home() {
   const [activeTab, setActiveTab] = useState<'cod' | 'tn' | 'tp' | 'pp' | 'nn' | 'nH' | 'ss' | 'color' | 'bod' | 'PH' | 'toc' | 't'>('cod');
   const tabs = [
-    { id: 'cod', label: 'COD' },
-    { id: 'tn', label: 'TN' },
-    { id: 'tp', label: 'TP' },
-    { id: 'pp', label: 'PP' },
-    { id: 'nn', label: 'NN' },
-    { id: 'nH', label: 'nH' },
-    { id: 'ss', label: 'SS' },
-    { id: 'color', label: 'Color' },
-    { id: 'bod', label: 'BOD' },
-    { id: 'PH', label: 'pH' },
-    { id: 'toc', label: 'TOC' },
-    { id: 't', label: 'T' },
+    { id: 'cod', label: 'CODₘₙ (산성과망간산칼륨법)', mobileLabel: 'COD' },
+    { id: 'tn', label: '총질소 (자외·가시선 분광법)', mobileLabel: 'TN' },
+    { id: 'tp', label: '총인(자외·가시선 분광법)', mobileLabel: 'TP' },
+    { id: 'pp', label: '인산염인(아스코빈산환원법)', mobileLabel: 'PP' },
+    { id: 'nn', label: '질산성질소(자외선/가시선 분광법)', mobileLabel: 'NN' },
+    { id: 'nH', label: '노말헥산 추출물질(nH)', mobileLabel: 'nH' },
+    { id: 'ss', label: '부유물질(SS)', mobileLabel: 'SS' },
+    { id: 'color', label: '색도(Color)', mobileLabel: 'Color' },
+    { id: 'bod', label: '생물화학적 산소요구량(BOD)', mobileLabel: 'BOD' },
+    { id: 'PH', label: '수소이온농도(PH)', mobileLabel: 'pH' },
+    { id: 'toc', label: '총유기탄소(TOC)', mobileLabel: 'TOC' },
+    { id: 't', label: '탁도(T)', mobileLabel: 'T' },
   ];
   
   return (
@@ -38,7 +38,7 @@ export default function Home() {
         activeTab={activeTab}
         onTabChange={(tabId) => setActiveTab(tabId as any)}
       />
-      <div className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm">
+      <div className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm hidden md:block">
         <div className="max-w-3xl mx-auto px-4">
           <nav className="flex space-x-8">
             <button

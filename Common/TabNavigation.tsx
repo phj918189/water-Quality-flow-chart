@@ -3,6 +3,7 @@ import TabButton from './TabButton';
 interface TabItem {
   id: string;
   label: string;
+  mobileLabel: string;
 }
 
 interface TabNavigationProps {
@@ -21,9 +22,9 @@ export default function TabNavigation({ tabs, activeTab, onTabChange }: TabNavig
               key={tab.id}
               isActive={activeTab === tab.id}
               onClick={() => onTabChange(tab.id)}
-            >
-              {tab.label}
-            </TabButton>
+              mobileLabel={tab.mobileLabel}
+              children={tab.label}
+            />
           ))}
         </nav>
       </div>

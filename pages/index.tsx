@@ -16,18 +16,18 @@ import TabNavigation from '../Common/TabNavigation';
 export default function Home() {
   const [activeTab, setActiveTab] = useState<'cod' | 'tn' | 'tp' | 'pp' | 'nn' | 'nH' | 'ss' | 'color' | 'bod' | 'PH' | 'toc' | 't'>('cod');
   const tabs = [
-    // { id: 'cod', label: 'CODₘₙ (산성과망간산칼륨법)' },
-    // { id: 'tn', label: '총질소 (자외·가시선 분광법)' },
-    // { id: 'tp', label: '총인(자외·가시선 분광법)' },
-    // { id: 'pp', label: '인산염인(아스코빈산환원법)' },
-    // { id: 'nn', label: '질산성질소(자외선/가시선 분광법)' },
-    // { id: 'nH', label: '노말헥산 추출물질(nH)' },
-    // { id: 'ss', label: '부유물질(SS)' },
-    // { id: 'color', label: '색도(Color)' },
-    // { id: 'bod', label: '생물화학적 산소요구량(BOD)' },
-    // { id: 'PH', label: '수소이온농도(PH)' },
-    // { id: 'toc', label: '총유기탄소(TOC)' },
-    // { id: 't', label: '탁도(T)' },
+    { id: 'cod', label: 'COD' },
+    { id: 'tn', label: 'TN' },
+    { id: 'tp', label: 'TP' },
+    { id: 'pp', label: 'PP' },
+    { id: 'nn', label: 'NN' },
+    { id: 'nH', label: 'nH' },
+    { id: 'ss', label: 'SS' },
+    { id: 'color', label: 'Color' },
+    { id: 'bod', label: 'BOD' },
+    { id: 'PH', label: 'pH' },
+    { id: 'toc', label: 'TOC' },
+    { id: 't', label: 'T' },
   ];
   
   return (

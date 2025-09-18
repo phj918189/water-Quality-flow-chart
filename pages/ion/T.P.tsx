@@ -70,7 +70,7 @@ export default function TP_UVVis_Flow() {
   return (
     <PageLayout>
       <PageHeader 
-        title="ES 04362.1c · 총인(자외·가시선 분광법) 플로우차트"
+        title="ES 04362.1c · 총인(자외·가시선 분광법) "
         subtitle="TP = Total Phosphorus"
         description="UVVis = Ultraviolet Visible Spectrometry"
       />

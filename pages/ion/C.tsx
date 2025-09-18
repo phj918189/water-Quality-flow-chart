@@ -72,7 +72,7 @@ export default function Chloride_Flow() {
     return (
         <PageLayout>
             <PageHeader
-                title="ES 04356.3d · 염소이온(적정법) 플로우차트"
+                title="ES 04356.3d · 염소이온(적정법) "
                 // subtitle="Cl⁻ = Chloride"
                 description="Chloride-Titrimetric Method"
             />

@@ -80,7 +80,7 @@ export default function Turbidity_Flow() {
   return (
      <PageLayout>
       <PageHeader 
-        title="ES 04313.1c · 탁도(Turbidity) 플로우차트"
+        title="ES 04313.1c · 탁도(Turbidity) "
       />
 
         <ol className="relative space-y-5">

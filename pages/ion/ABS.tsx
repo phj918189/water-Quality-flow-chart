@@ -88,7 +88,7 @@ export default function ABS_Flow() {
   return (
     <PageLayout>
       <PageHeader 
-        title="ES 04359.1d · 음이온계면활성제(MBAS) 플로우차트"
+        title="ES 04359.1d · 음이온계면활성제(MBAS) "
         
         description="ABS = Anionic Surfactants-UV/Visible Spectrometry"
       />

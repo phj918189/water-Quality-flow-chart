@@ -81,7 +81,7 @@ export default function Cyanide_UVVis_Flow() {
     return (
     <PageLayout>
       <PageHeader 
-        title="ES 04353.1e · 시안(자외·가시선 분광법) 플로우차트"
+        title="ES 04353.1e · 시안(자외·가시선 분광법) "
         subtitle="CN = Cyanide"
         description="Cyanide-UVVis = Cyanide-UV/Visible Spectrometry"
       />

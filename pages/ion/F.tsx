@@ -90,7 +90,7 @@ export default function Fluoride_LaARC_Flow() {
   return (
     <PageLayout>
       <PageHeader 
-        title="ES 04351.1b · 불소(란탄–알리자린 콤프렉손) 플로우차트"
+        title="ES 04351.1b · 불소(란탄–알리자린 콤프렉손) "
         subtitle="F = Fluoride"
         description="Fluoride-LaARC = Fluoride-Lanthanum–Alizarin Complexon"
       />

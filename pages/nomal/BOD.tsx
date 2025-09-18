@@ -83,7 +83,7 @@ export default function BOD_Flow() {
   return (
     <PageLayout>
       <PageHeader 
-        title="ES 04305.1c · 생물화학적 산소요구량(BOD₅, 20 ℃) 플로우차트"
+        title="ES 04305.1c · 생물화학적 산소요구량(BOD₅, 20 ℃) "
         subtitle="BOD = Biological Oxygen Demand"
       />
 

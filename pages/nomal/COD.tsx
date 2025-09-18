@@ -86,8 +86,9 @@ export default function CODMnFlowchart() {
     
     <PageLayout>
       <PageHeader 
-        title="ES 04315.1b · CODₘₙ (산성과망간산칼륨법) 플로우차트"
-        description="COD = Chemical Oxygen Demand, CODMn = Chemical Oxygen Demand-Titrimetric Method-Acidic Permanganate"
+        title="ES 04315.1b · CODₘₙ (산성과망간산칼륨법) "
+        subtitle="COD = Chemical Oxygen Demand"
+        description="CODMn = Chemical Oxygen Demand-Titrimetric Method-Acidic Permanganate"
       />
 
         <ol className="relative space-y-5">

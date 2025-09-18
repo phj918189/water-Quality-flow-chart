@@ -76,7 +76,7 @@ export default function NO2_N_Flow() {
 return (
     <PageLayout>
       <PageHeader 
-        title="ES 04362.1a · 아질산성 질소(자외·가시선 분광법) 플로우차트"
+        title="ES 04362.1a · 아질산성 질소(자외·가시선 분광법) "
         subtitle="NO2-N = Nitrite Nitrogen"
         description="NO2-N = Nitrite Nitrogen-UV/Visible Spectrometry"
         />

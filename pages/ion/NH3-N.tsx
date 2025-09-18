@@ -83,7 +83,7 @@ export default function NH3_N_Flow() {
   return (
     <PageLayout>
       <PageHeader 
-        title="ES 04355.1c · 암모니아 질소(자외·가시선 분광법) 플로우차트"
+        title="ES 04355.1c · 암모니아 질소(자외·가시선 분광법) "
         subtitle="NH3-N = Ammonium Nitrogen"
         description="NH3-N = Ammonium Nitrogen-UV/Visible Spectrometry"
       />

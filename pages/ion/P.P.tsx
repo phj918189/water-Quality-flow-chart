@@ -54,7 +54,7 @@ export default function P_P_Flow() {
     return (
         <PageLayout>
       <PageHeader 
-        title="ES 04360.2c · 인산염인(아스코빈산환원법) 플로우차트"
+        title="ES 04360.2c · 인산염인(아스코빈산환원법) "
         subtitle="수질오염공정시험기준에 따른 전체 절차 요약 · 인쇄 친화형"
         description="Phosphorus-P-UV/Visible Spectrometry-Ascorbic Acid Method"
       />    

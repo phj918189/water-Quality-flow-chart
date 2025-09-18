@@ -69,7 +69,7 @@ export default function TotalColiform_DryFilm_Flow() {
 
   return (
     <PageLayout>
-      <PageHeader title="총대장균군(건조필름법) 플로우차트"
+      <PageHeader title="총대장균군(건조필름법) "
       subtitle="TC = Total Coliform-Dry Rehydratable Film Method"
       />
         <ol className="space-y-5">

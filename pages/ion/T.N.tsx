@@ -93,7 +93,7 @@ export default function TN_UVVis_Oxidation_Flow() {
   return (
     <PageLayout>
       <PageHeader 
-        title="ES 04363.1a · 총질소(자외·가시선 분광법·산화법) 플로우차트"
+        title="ES 04363.1a · 총질소(자외·가시선 분광법·산화법) "
         subtitle="TN = Total Nitrogen"
         description="UVVisOxidation = Ultraviolet Visible Spectrometry-Oxidation Method"
       />

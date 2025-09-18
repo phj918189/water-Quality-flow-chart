@@ -69,7 +69,7 @@ export default function SS_Flow() {
   return (
     <PageLayout>
       <PageHeader 
-        title="ES 04303.1c · 부유물질(SS) 플로우차트"
+        title="ES 04303.1c · 부유물질(SS) "
         subtitle="SS = Suspended Solids"
       />
 

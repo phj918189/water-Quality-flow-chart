@@ -75,7 +75,7 @@ export default function PH_Flow() {
   return (
         <PageLayout>
       <PageHeader 
-        title="ES 04306.1d · 수소이온농도(pH) 플로우차트"
+        title="ES 04306.1d · 수소이온농도(pH) "
         subtitle="PH = Potential of Hydrogen"
       />
 

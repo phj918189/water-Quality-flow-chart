@@ -74,7 +74,7 @@ export default function NH_Flow() {
   return (
     <PageLayout>
       <PageHeader 
-        title="ES 04302.1b · 노말헥산 추출물질(nH) 전용 플로우차트"
+        title="ES 04302.1b · 노말헥산 추출물질(nH) 전용 "
         subtitle=""
         description="nH = n-Hexane Extractable Material"
       />

@@ -72,7 +72,7 @@ export default function Color_Flow() {
   return (
     <PageLayout>
       <PageHeader 
-        title="ES 04304.1d · 색도(Adams–Nickerson) 플로우차트"
+        title="ES 04304.1d · 색도(Adams–Nickerson) "
       />
 
         <ol className="relative space-y-5">

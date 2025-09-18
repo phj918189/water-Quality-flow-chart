@@ -66,7 +66,7 @@ export default function CODMnFlowchart() {
           "a = 시료의 KMnO₄(0.005 M) 사용량(mL)",
           "b = 공시험의 KMnO₄(0.005 M) 사용량(mL)",
           "f = KMnO₄(0.005 M) 인자, V = 시료 체적(mL)",
-          "계산식: COD(mg/L) = (b − a) × f × (1000 / V) × 0.2",
+          "계산식: COD(mg/L) = (a − b) × f × (1000 / V) × 0.2",
           "보고: 0.1 mg/L 단위",
         ],
       },

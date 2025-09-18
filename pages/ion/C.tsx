@@ -76,7 +76,7 @@ export default function Chloride_Flow() {
                 // subtitle="Cl⁻ = Chloride"
                 description="Chloride-Titrimetric Method"
             />
-            <ol className="space-y-5">
+            <div className="relative space-y-5">
                 {sections.map((s, i) => (
                     <li key={i} className="list-none">
                         <AnimatedSection index={i} accent={s.accent}>
@@ -96,7 +96,7 @@ export default function Chloride_Flow() {
                         </AnimatedSection>
                     </li>
                 ))}
-            </ol>
+            </div>
         </PageLayout>
 
     );

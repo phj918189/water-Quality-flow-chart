@@ -72,7 +72,7 @@ export default function TotalColiform_DryFilm_Flow() {
       <PageHeader title="총대장균군(건조필름법) "
       subtitle="TC = Total Coliform-Dry Rehydratable Film Method"
       />
-        <ol className="space-y-5">
+        <div className="relative space-y-5">
             {steps.map((s, i) => (
             <li key={i} className="list-none">
                 <AnimatedSection index={i} accent={s.accent}>
@@ -92,7 +92,7 @@ export default function TotalColiform_DryFilm_Flow() {
                 </AnimatedSection>
             </li>
             ))}
-        </ol>
+        </div>
          
     </PageLayout>
   );

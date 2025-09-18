@@ -87,7 +87,7 @@ export default function BOD_Flow() {
         subtitle="BOD = Biological Oxygen Demand"
       />
 
-          <ol className="relative space-y-5">
+          <div className="relative space-y-5">
           {blocks.map((b, i) => (
             <li key={i} className="list-none">
               <AnimatedSection index={i} accent={b.accent}>
@@ -107,7 +107,7 @@ export default function BOD_Flow() {
               </AnimatedSection>
             </li>
           ))}
-        </ol>
+        </div>
       </PageLayout>
   );
 }

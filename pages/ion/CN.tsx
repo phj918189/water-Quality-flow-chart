@@ -85,7 +85,7 @@ export default function Cyanide_UVVis_Flow() {
         subtitle="CN = Cyanide"
         description="Cyanide-UVVis = Cyanide-UV/Visible Spectrometry"
       />
-        <ol className="space-y-5">
+        <div className="relative space-y-5">
         {sections.map((s, i) => (
         <li key={i} className="list-none">
           <AnimatedSection index={i} accent={s.accent}>
@@ -105,7 +105,7 @@ export default function Cyanide_UVVis_Flow() {
           </AnimatedSection>
         </li>
       ))}
-    </ol>
+    </div>
     </PageLayout>
   );
 }

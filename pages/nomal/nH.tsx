@@ -80,7 +80,7 @@ export default function NH_Flow() {
       />
 
 
-        <ol className="relative space-y-5">
+        <div className="relative space-y-5">
           {sections.map((s, i) => (
             <li key={i} className="list-none">
               <AnimatedSection index={i}>
@@ -100,7 +100,7 @@ export default function NH_Flow() {
               </AnimatedSection>
             </li>
           ))}
-        </ol>
+        </div>
 
         {/* <footer className="mt-8 text-xs text-gray-500">
           본 도식은 사용자가 업로드한 표준(ES 04302.1b)을 바탕으로 작성되었습니다. 실제 시험 전 최신 개정본과 안전수칙을 반드시 확인하세요.

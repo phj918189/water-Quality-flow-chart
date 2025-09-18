@@ -109,7 +109,7 @@ export default function PhenolsChecklist() {
             title="ES 04365.1d · 페놀류–자외/가시선 분광법"
             subtitle="Phenols-UV/Visible Spectrometry"
         />
-        <ol className="space-y-5">
+        <div className="relative space-y-5">
             {Object.values(SECTIONS).map((s, i) => (
                 <li key={i} className="list-none">
                     <AnimatedSection index={i}>
@@ -129,7 +129,7 @@ export default function PhenolsChecklist() {
                     </AnimatedSection>
                 </li>
             ))}
-        </ol>
+        </div>
         </PageLayout>
   );
 }

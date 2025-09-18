@@ -98,7 +98,7 @@ export default function TN_UVVis_Oxidation_Flow() {
         description="UVVisOxidation = Ultraviolet Visible Spectrometry-Oxidation Method"
       />
 
-        <ol className="relative space-y-5">
+        <div className="relative space-y-5">
           {steps.map((s, i) => (
             <li key={i} className="list-none">
               <AnimatedSection index={i}>
@@ -120,7 +120,7 @@ export default function TN_UVVis_Oxidation_Flow() {
               </AnimatedSection>
             </li>
           ))}
-        </ol>
+        </div>
       </PageLayout>
   );
 }

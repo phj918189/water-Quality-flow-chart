@@ -91,7 +91,7 @@ export default function CODMnFlowchart() {
         description="CODMn = Chemical Oxygen Demand-Titrimetric Method-Acidic Permanganate"
       />
 
-        <ol className="relative space-y-5">
+        <div className="relative space-y-5">
           {steps.map((s, i) => (
             <li key={i} className="list-none">
               <AnimatedSection index={i}>
@@ -111,7 +111,7 @@ export default function CODMnFlowchart() {
               </AnimatedSection>
             </li>
           ))}
-        </ol>
+        </div>
     </PageLayout>
     
   );

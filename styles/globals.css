@@ -19,3 +19,7 @@
     left: 0 ;
     z-index: 9999 ;
 }
+
+.custom-margin {
+  margin: 20px;
+}

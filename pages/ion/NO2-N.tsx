@@ -80,7 +80,7 @@ return (
         subtitle="NO2-N = Nitrite Nitrogen"
         description="NO2-N = Nitrite Nitrogen-UV/Visible Spectrometry"
         />
-        <ol className="space-y-5">
+        <div className="relative space-y-5">
       {sections.map((s, i) => (
         <li key={i} className="list-none">
           <AnimatedSection index={i} accent={s.accent}>
@@ -100,7 +100,7 @@ return (
           </AnimatedSection>
         </li>
       ))}
-        </ol>
+        </div>
         </PageLayout>
   );
 }

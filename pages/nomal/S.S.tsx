@@ -74,7 +74,7 @@ export default function SS_Flow() {
       />
 
 
-        <ol className="relative space-y-5">
+        <div className="relative space-y-5">
           {blocks.map((b, i) => (
             <li key={i} className="list-none">
               <AnimatedSection index={i}>
@@ -94,7 +94,7 @@ export default function SS_Flow() {
               </AnimatedSection>
             </li>
           ))}
-        </ol>
+        </div>
       </PageLayout>
   );
 }

@@ -58,7 +58,7 @@ export default function NO3_N_Flow() {
         description="NO3 = Nitrate Nitrogen-UV/Visible Spectrometry-Active Carbon Adsorption method"
       />
 
-        <ol className="relative space-y-5">
+        <div className="relative space-y-5">
           {nitrate.map((s, i) => (
             <li key={i} className="list-none">
               <AnimatedSection index={i}>
@@ -78,8 +78,7 @@ export default function NO3_N_Flow() {
               </AnimatedSection>
             </li>
           ))}
-        </ol>
-
+        </div>
     </PageLayout>
   );
 }

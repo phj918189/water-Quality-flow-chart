@@ -26,13 +26,19 @@ import TC_Flow from './nomal/T.C';
 import T_Flow from './nomal/T';
 import TOC_Flow from './nomal/TOC';
 
+// Metal 카테고리 컴포넌트들
+import Metal_Flow from './metal/Metal';
+import Hg_Flow from './metal/Hg';
+import HexaCr_Flow from './metal/Hexa-Cr';
+
 export default function Home() {
-  const [activeCategory, setActiveCategory] = useState<'ion' | 'normal'>('ion');
+  const [activeCategory, setActiveCategory] = useState<'ion' | 'normal' | 'metal'>('ion');
   const [activeTab, setActiveTab] = useState<string>('tn');
 
   const categories = [
     { id: 'ion', label: 'Ion' },
     { id: 'normal', label: 'Normal' },
+    { id: 'metal', label: 'Metal' },
   ];
 
   const ionTabs = [
@@ -60,8 +66,13 @@ export default function Home() {
     { id: 't', label: '탁도(T)', mobileLabel: 'T' },
     { id: 'tc', label: '총탄소(T.C)', mobileLabel: 'TC' },
   ];
+  const metalTabs = [
+    { id: 'metal', label: '금속류 ICP-AES 플로우차트', mobileLabel: 'Metal' },
+    { id: 'hg', label: '수은-냉증기-AAS 플로우차트', mobileLabel: 'Hg' },
+    { id: 'hexa-cr', label: '6가 크롬-자외/가시선 플로우차트', mobileLabel: 'HexaCr' },
+  ];
 
-  const currentTabs = activeCategory === 'ion' ? ionTabs : normalTabs;
+  const currentTabs = activeCategory === 'ion' ? ionTabs : activeCategory === 'normal' ? normalTabs : activeCategory === 'metal' ? metalTabs : [];
 
   const renderContent = () => {
     if (activeCategory === 'ion') {
@@ -82,6 +93,17 @@ export default function Home() {
     } else {
       switch (activeTab) {
         case 'cod': return <COD_Flow />;
+        case 'tn': return <TN_Flow />;
+        case 'tp': return <TP_Flow />;
+        case 'no3-n': return <NO3_N_Flow />;
+        case 'pp': return <PP_Flow />;
+        case 'f': return <F_Flow />;
+        case 'no2-n': return <NO2_N_Flow />;
+        case 'nh3-n': return <NH3_N_Flow />;
+        case 'cn': return <CN_Flow />;
+        case 'c': return <C_Flow />;
+        case 'abs': return <ABS_Flow />;
+        case 'phenols': return <Phenols_Flow />;
         case 'bod': return <BOD_Flow />;
         case 'ss': return <SS_Flow />;
         case 'color': return <Color_Flow />;
@@ -90,24 +112,29 @@ export default function Home() {
         case 'toc': return <TOC_Flow />;
         case 't': return <T_Flow />;
         case 'tc': return <TC_Flow />;
+        case 'metal': return <Metal_Flow />;
+        case 'hg': return <Hg_Flow />;
+        case 'hexa-cr': return <HexaCr_Flow />;
         default: return <COD_Flow />;
       }
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 custom-margin">
       {/* 상위 카테고리 네비게이션 */}
       <CategoryNavigation 
         categories={categories}
         activeCategory={activeCategory}
         onCategoryChange={(categoryId) => {
-          setActiveCategory(categoryId as 'ion' | 'normal');
+          setActiveCategory(categoryId as 'ion' | 'normal' | 'metal');
           // 카테고리 변경 시 첫 번째 탭으로 이동
           if (categoryId === 'ion') {
             setActiveTab('tn');
-          } else {
+          } else if (categoryId === 'normal') {
             setActiveTab('cod');
+          } else {
+            setActiveTab('metal');
           }
         }}
       />

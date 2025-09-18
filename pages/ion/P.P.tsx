@@ -58,7 +58,7 @@ export default function P_P_Flow() {
         subtitle="수질오염공정시험기준에 따른 전체 절차 요약 · 인쇄 친화형"
         description="Phosphorus-P-UV/Visible Spectrometry-Ascorbic Acid Method"
       />    
-                <ol className="relative space-y-5">
+                <div className="relative space-y-5">
                     {phosphate.map((s, i) => (
                         <li key={i} className="list-none">
                             <AnimatedSection index={i}>
@@ -78,7 +78,7 @@ export default function P_P_Flow() {
                             </AnimatedSection>
                         </li>
                     ))}
-                </ol>
+                </div>
 
             
         </PageLayout>

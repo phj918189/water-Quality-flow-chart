@@ -75,7 +75,7 @@ export default function Color_Flow() {
         title="ES 04304.1d · 색도(Adams–Nickerson) "
       />
 
-        <ol className="relative space-y-5">
+        <div className="relative space-y-5">
           {sections.map((s, i) => (
             <li key={i} className="list-none">
               <AnimatedSection index={i} accent={s.accent}>
@@ -95,7 +95,7 @@ export default function Color_Flow() {
               </AnimatedSection>
             </li>
           ))}
-        </ol>
+        </div>
       </PageLayout>
   );
 }

@@ -83,7 +83,7 @@ export default function Turbidity_Flow() {
         title="ES 04313.1c · 탁도(Turbidity) "
       />
 
-        <ol className="relative space-y-5">
+        <div className="relative space-y-5">
           {sections.map((s, i) => (
             <li key={i} className="list-none">
               <AnimatedSection index={i} accent={s.accent}>
@@ -103,7 +103,7 @@ export default function Turbidity_Flow() {
               </AnimatedSection>
             </li>
           ))}
-        </ol>
+        </div>
 
       </PageLayout>
   );

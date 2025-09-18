@@ -79,7 +79,7 @@ export default function PH_Flow() {
         subtitle="PH = Potential of Hydrogen"
       />
 
-                <ol className="relative space-y-5">
+                <div className="relative space-y-5">
           {blocks.map((b, i) => (
             <li key={i} className="list-none">
               <AnimatedSection index={i} accent={b.accent}>
@@ -99,7 +99,7 @@ export default function PH_Flow() {
               </AnimatedSection>
             </li>
           ))}
-        </ol>
+        </div>
       </PageLayout>
   );
 }

@@ -95,7 +95,7 @@ export default function Fluoride_LaARC_Flow() {
         description="Fluoride-LaARC = Fluoride-Lanthanum–Alizarin Complexon"
       />
 
-        <ol className="space-y-5">
+        <div className="relative space-y-5">
           {sections.map((s, i) => (
             <li key={i} className="list-none">
                 <AnimatedSection index={i} accent={s.accent}>
@@ -115,7 +115,7 @@ export default function Fluoride_LaARC_Flow() {
               </AnimatedSection>
             </li>
           ))}
-        </ol>
+        </div>
     </PageLayout>
   );
 }                

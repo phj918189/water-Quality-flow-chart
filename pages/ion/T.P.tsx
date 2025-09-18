@@ -75,7 +75,7 @@ export default function TP_UVVis_Flow() {
         description="UVVis = Ultraviolet Visible Spectrometry"
       />
 
-        <ol className="relative space-y-5">
+        <div className="relative space-y-5">
           {steps.map((s, i) => (
             <li key={i} className="list-none">
               <AnimatedSection index={i}>
@@ -100,7 +100,7 @@ export default function TP_UVVis_Flow() {
               )} */}
             </li>
           ))}
-        </ol>
+        </div>
       </PageLayout>
   );
 }

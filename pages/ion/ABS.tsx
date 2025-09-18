@@ -92,7 +92,7 @@ export default function ABS_Flow() {
         
         description="ABS = Anionic Surfactants-UV/Visible Spectrometry"
       />
-      <ol className="space-y-5">
+      <div className="relative space-y-5">
         {sections.map((s, i) => (
         <li key={i} className="list-none">
             <AnimatedSection index={i} accent={s.accent}>
@@ -112,7 +112,7 @@ export default function ABS_Flow() {
             </AnimatedSection>
           </li>
         ))}
-      </ol>
+      </div>
       </PageLayout>
   );
 }

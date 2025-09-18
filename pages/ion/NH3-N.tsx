@@ -87,7 +87,7 @@ export default function NH3_N_Flow() {
         subtitle="NH3-N = Ammonium Nitrogen"
         description="NH3-N = Ammonium Nitrogen-UV/Visible Spectrometry"
       />
-        <ol className="space-y-5">
+        <div className="relative space-y-5">
       {sections.map((s, i) => (
         <li key={i} className="list-none">
           <AnimatedSection index={i} accent={s.accent}>
@@ -107,7 +107,7 @@ export default function NH3_N_Flow() {
           </AnimatedSection>
         </li>
       ))}
-        </ol>
+        </div>
       </PageLayout>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CategoryNavigation from '../Common/CategoryNavigation';
 import TabNavigation from '../Common/TabNavigation';
+import GoogleSheetsConfig from '../Common/GoogleSheetsConfig';
 
 // Ion 카테고리 컴포넌트들
 import ABS_Flow from './ion/ABS';
@@ -34,6 +35,8 @@ import HexaCr_Flow from './metal/Hexa-Cr';
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState<'ion' | 'normal' | 'metal'>('ion');
   const [activeTab, setActiveTab] = useState<string>('tn');
+  const [showGoogleSheets, setShowGoogleSheets] = useState(false);
+  const [sheetsData, setSheetsData] = useState<any[][]>([]);
 
   const categories = [
     { id: 'ion', label: 'Ion' },
@@ -138,6 +141,30 @@ export default function Home() {
           }
         }}
       />
+
+      {/* 구글시트 토글 버튼 */}
+      <div className="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div className="max-w-4xl mx-auto px-4 py-2">
+          <button
+            onClick={() => setShowGoogleSheets(!showGoogleSheets)}
+            className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors text-sm font-medium"
+          >
+            {showGoogleSheets ? '구글시트 숨기기' : '구글시트 불러오기'}
+          </button>
+        </div>
+      </div>
+
+      {/* 구글시트 설정 및 데이터 */}
+      {showGoogleSheets && (
+        <div className="max-w-4xl mx-auto px-4 py-6">
+          <GoogleSheetsConfig 
+            onDataLoaded={(data) => {
+              setSheetsData(data);
+              console.log('구글시트 데이터 로드됨:', data);
+            }}
+          />
+        </div>
+      )}
 
       {/* 하위 탭 네비게이션 */}
       <TabNavigation 

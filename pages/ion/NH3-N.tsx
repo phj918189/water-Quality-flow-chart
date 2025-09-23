@@ -1,10 +1,45 @@
-import PageLayout from "../../Common/PageLayout";
-import PageHeader from "../../Common/PageHeader";
-import AnimatedSection from "../../Common/AnimatedSection";
+import { title } from "process";
 
+
+// ------------------------------------------------------------
 export default function NH3_N_Flow() {
+  // Local minimal UI components to replace missing imports
+  // ------------------------------------------------------------
+  const PageLayout = ({ children }) => (
+    <div className="min-h-screen w-full bg-gray-50 py-8">
+      <div className="mx-auto max-w-4xl px-4">{children}</div>
+    </div>
+  );
+
+  const PageHeader = ({ title, subtitle, description }) => (
+    <header className="mb-6 flex items-start justify-between gap-4">
+      <div>
+        <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
+        {subtitle ? <p className="text-sm text-gray-700">{subtitle}</p> : null}
+        {description ? <p className="text-xs text-gray-500">{description}</p> : null}
+      </div>
+      <button
+        onClick={() => window.print()}
+        className="rounded-2xl border px-3 py-2 text-sm shadow-sm hover:bg-gray-100"
+      >
+        인쇄/PDF 저장
+      </button>
+    </header>
+  );
+
+  const AnimatedSection = ({ children, accent }) => (
+    <section
+      className={`rounded-2xl ${accent ? "bg-amber-50 ring-amber-100" : "bg-white ring-gray-100"} p-5 shadow-md ring-1`}
+    >
+      {children}
+    </section>
+  );
+
+  // ------------------------------------------------------------
+  // Content
+  // ------------------------------------------------------------
   const sections = [
-    {   
+    {
       title: "개요·적용",
       bullets: [
         "원리: 페놀-하이포클로라이트(인도페놀 청색) 반응을 촉매(Na-니트로프루시드)로 가속 → 630 nm에서 흡광 측정",
@@ -12,7 +47,7 @@ export default function NH3_N_Flow() {
       ],
     },
     {
-      title: "간섭/전처리(아주 중요)",    
+      title: "간섭/전처리(아주 중요)",
       accent: true,
       bullets: [
         "잔류 염소가 있으면 암모니아가 소모됨 → 적정량의 환원제(예: 티오황산나트륨)로 제거(과량 금지)",
@@ -29,6 +64,21 @@ export default function NH3_N_Flow() {
         "나트륨 페놀라이트 용액(12.5%)",
         "수산화나트륨 용액(4%, 20%)",
         "표준: 무수 염화암모늄(NH4Cl)로 100 mg/L 원액 → 5 mg/L 작업용",
+      ],
+    },
+    {
+      title: "유효염소 농도의 측정",
+      bullets: [
+        "하이포염소산나트륨용액 10 mL를 200mL 부피플라스크에 넣고 정제수를 넣오 표선을 채운 다음 이 용액 10mL를 취해 삼각플라스크에 넣고 정제수 용액의 부피를 100mL로 조정.",
+        "요오드화칼룸 1g~2g 및 아세트산 (1+1) 6mL넣어 밀봉하고 흔들어 섞은 후 어두운 곳에 약 5분간 방치하고 전분용액을 지시약으로 하여 티오황상나트륨용액 (0.05M)으로 적정.",
+        "따로 정제수 10mL를 취해 바탕 시험을 실시하여 보정",
+        "계산식",
+        "유효염소량(%) = a * f * 200/10 * 1/V * 0.001773 * 100",
+        " a : 티오황상나트륨용액(0.05M)의 소비량(mL)",
+        " f : 티오황상나트륨용액(0.05M)의 계수",
+        " V : 시료의 부피(mL)",
+        " 0.001773 : 유효염소량의 계수",
+        " 100 : 유효염소량의 단위(%)",
       ],
     },
     {
@@ -78,36 +128,92 @@ export default function NH3_N_Flow() {
         "잔류 염소 제거 시 환원제 과량 사용 금지(측정치 저하)",
       ],
     },
+    // 추가: 핵심 근거(요약)
+    {
+      title: "핵심 근거(표준 요지)",
+      bullets: [
+        "인도페놀 청색 630 nm 흡광 측정(시약: 페놀라이트·나이트로프루시드·NaOCl)",
+        "잔류 염소 환원 제거, 고탁도/착색 시 증류 권고",
+        "검정 3점 이상, R² ≥ 0.98 또는 RF RSD ≤ 25%",
+        "보고식: (y − b)/a × I",
+      ],
+    },
   ];
+
+  // ------------------------------------------------------------
+  // Simple runtime tests (smoke tests) to help validate structure
+  // ------------------------------------------------------------
+  const runTests = () => {
+    const tests = [];
+    tests.push({
+      name: "섹션 개수 ≥ 10",
+      pass: sections.length >= 10,
+      msg: `현재 ${sections.length}개`,
+    });
+    tests.push({
+      name: "계산·보고 섹션에 공식 포함",
+      pass: sections.some((s) => s.title.includes("계산") && s.bullets.join(" ").includes("(y − b) / a × I")),
+      msg: "(y − b) / a × I",
+    });
+    tests.push({
+      name: "분석 절차에 630 nm 언급",
+      pass: sections.some((s) => s.title.includes("분석 절차") && s.bullets.join(" ").includes("630 nm")),
+      msg: "630 nm",
+    });
+    tests.push({
+      name: "QA/QC 기준 존재",
+      pass: sections.some((s) => s.title.includes("QA/QC") && (s.bullets.join(" ").includes("R²") || s.bullets.join(" ").includes("정밀도"))),
+      msg: "R² 또는 정밀도",
+    });
+    return tests;
+  };
+
+  const tests = runTests();
 
   return (
     <PageLayout>
-      <PageHeader 
-        title="ES 04355.1c · 암모니아 질소(자외·가시선 분광법) "
+      <PageHeader
+        title="ES 04355.1c · 암모니아 질소(자외·가시선 분광법)"
         subtitle="NH3-N = Ammonium Nitrogen"
-        description="NH3-N = Ammonium Nitrogen-UV/Visible Spectrometry"
+        description="NH3-N = Ammonium Nitrogen — UV/Visible Spectrometry"
       />
-        <div className="relative space-y-5">
-      {sections.map((s, i) => (
-        <li key={i} className="list-none">
-          <AnimatedSection index={i} accent={s.accent}>
-            <div className="flex items-start gap-4">
-              <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-gray-900 text-white">
-                {i + 1}
+
+      <div className="relative space-y-5">
+        {sections.map((s, i) => (
+          <li key={i} className="list-none">
+            <AnimatedSection accent={s.accent}>
+              <div className="flex items-start gap-4">
+                <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-gray-900 text-white">
+                  {i + 1}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-lg font-semibold">{s.title}</h3>
+                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-gray-800">
+                    {s.bullets.map((b, j) => (
+                      <li key={j}>{b}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="min-w-0 flex-1">
-                <h3 className="text-lg font-semibold">{s.title}</h3>
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-gray-800">
-                  {s.bullets.map((b, j) => (
-                    <li key={j}>{b}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </AnimatedSection>
-        </li>
-      ))}
-        </div>
-      </PageLayout>
+            </AnimatedSection>
+          </li>
+        ))}
+      </div>
+
+      {/* Runtime test results */}
+      <section className="mt-8 rounded-2xl bg-white p-5 shadow-md ring-1 ring-gray-100">
+        <h2 className="text-lg font-semibold">내장 테스트</h2>
+        <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-gray-800">
+          {tests.map((t, idx) => (
+            <li key={idx}>
+              <span className={t.pass ? "text-green-700" : "text-red-700"}>
+                [{t.pass ? "PASS" : "FAIL"}]
+              </span>{" "}
+              {t.name} — {t.msg}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </PageLayout>
   );
 }

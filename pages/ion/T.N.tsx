@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import PageLayout from "../../Common/PageLayout";
 import PageHeader from "../../Common/PageHeader";
 import AnimatedSection from "../../Common/AnimatedSection";
+import TNCalculator from "../../Common/Calculator/TNCalculator";
 
 
 export default function TN_UVVis_Oxidation_Flow() {
@@ -97,6 +98,9 @@ export default function TN_UVVis_Oxidation_Flow() {
         subtitle="TN = Total Nitrogen"
         description="UVVisOxidation = Ultraviolet Visible Spectrometry-Oxidation Method"
       />
+
+      {/* 자동 계산기 섹션 */}
+      <TNCalculator />
 
         <div className="relative space-y-5">
           {steps.map((s, i) => (

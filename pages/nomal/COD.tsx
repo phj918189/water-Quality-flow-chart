@@ -2,7 +2,8 @@ import React, { useMemo } from "react";
 import PageLayout from '../../Common/PageLayout';
 import PageHeader from '../../Common/PageHeader';
 import AnimatedSection from '../../Common/AnimatedSection';
-import TabNavigation from "../../Common/TabNavigation"; 
+import TabNavigation from "../../Common/TabNavigation";
+import CODCalculator from '../../Common/Calculator/CODCalculator'; 
 
 export default function CODMnFlowchart() {
   const steps = useMemo(
@@ -66,7 +67,7 @@ export default function CODMnFlowchart() {
           "a = 시료의 KMnO₄(0.005 M) 사용량(mL)",
           "b = 공시험의 KMnO₄(0.005 M) 사용량(mL)",
           "f = KMnO₄(0.005 M) 인자, V = 시료 체적(mL)",
-          "계산식: COD(mg/L) = (a − b) × f × (1000 / V) × 0.2",
+          "계산식: COD(mg/L) = (b - a) × f × (1000 / V) × 0.2",
           "보고: 0.1 mg/L 단위",
         ],
       },
@@ -90,6 +91,10 @@ export default function CODMnFlowchart() {
         subtitle="COD = Chemical Oxygen Demand"
         description="CODMn = Chemical Oxygen Demand-Titrimetric Method-Acidic Permanganate"
       />
+      {/* COD 계산기 섹션 */}
+      {/* <div className="mt-8"> */}
+          <CODCalculator />
+        {/* </div> */}
 
         <div className="relative space-y-5">
           {steps.map((s, i) => (
@@ -112,6 +117,8 @@ export default function CODMnFlowchart() {
             </li>
           ))}
         </div>
+
+        
     </PageLayout>
     
   );

@@ -3,6 +3,17 @@ import CategoryNavigation from '../Common/CategoryNavigation';
 import TabNavigation from '../Common/TabNavigation';
 import GoogleSheetsConfig from '../Common/GoogleSheetsConfig';
 
+// Normal 카테고리 컴포넌트들
+import BOD_Flow from './nomal/BOD';
+import COD_Flow from './nomal/COD';
+import Color_Flow from './nomal/Color';
+import NH_Flow from './nomal/nH';
+import PH_Flow from './nomal/P.H';
+import SS_Flow from './nomal/S.S';
+import TC_Flow from './nomal/T.C';
+import T_Flow from './nomal/T';
+import TOC_Flow from './nomal/TOC';
+
 // Ion 카테고리 컴포넌트들
 import ABS_Flow from './ion/ABS';
 import C_Flow from './ion/C';
@@ -16,16 +27,6 @@ import Phenols_Flow from './ion/Phenols';
 import TN_Flow from './ion/T.N';
 import TP_Flow from './ion/T.P';
 
-// Normal 카테고리 컴포넌트들
-import BOD_Flow from './nomal/BOD';
-import COD_Flow from './nomal/COD';
-import Color_Flow from './nomal/Color';
-import NH_Flow from './nomal/nH';
-import PH_Flow from './nomal/P.H';
-import SS_Flow from './nomal/S.S';
-import TC_Flow from './nomal/T.C';
-import T_Flow from './nomal/T';
-import TOC_Flow from './nomal/TOC';
 
 // Metal 카테고리 컴포넌트들
 import Metal_Flow from './metal/Metal';
@@ -33,17 +34,31 @@ import Hg_Flow from './metal/Hg';
 import HexaCr_Flow from './metal/Hexa-Cr';
 
 export default function Home() {
-  const [activeCategory, setActiveCategory] = useState<'ion' | 'normal' | 'metal'>('ion');
-  const [activeTab, setActiveTab] = useState<string>('tn');
+  const [activeCategory, setActiveCategory] = useState<'normal' | 'ion' | 'metal'>('normal');
+  const [activeTab, setActiveTab] = useState<string>('cod');
   const [showGoogleSheets, setShowGoogleSheets] = useState(false);
   const [sheetsData, setSheetsData] = useState<any[][]>([]);
 
   const categories = [
-    { id: 'ion', label: 'Ion' },
     { id: 'normal', label: 'Normal' },
+    { id: 'ion', label: 'Ion' },
     { id: 'metal', label: 'Metal' },
   ];
 
+
+  const normalTabs = [
+    { id: 'cod', label: 'CODₘₙ (산성과망간산칼륨법)', mobileLabel: 'COD' },
+    { id: 'bod', label: '생물화학적 산소요구량(BOD)', mobileLabel: 'BOD' },
+    { id: 'ss', label: '부유물질(SS)', mobileLabel: 'SS' },
+    { id: 'color', label: '색도(Color)', mobileLabel: 'Color' },
+    { id: 'nh', label: '노말헥산 추출물질(nH)', mobileLabel: 'nH' },
+    { id: 'ph', label: '수소이온농도(PH)', mobileLabel: 'pH' },
+    { id: 'toc', label: '총유기탄소(TOC)', mobileLabel: 'TOC' },
+    { id: 't', label: '탁도(T)', mobileLabel: 'T' },
+    { id: 'tc', label: '총탄소(T.C)', mobileLabel: 'TC' },
+  ];
+
+  
   const ionTabs = [
     { id: 'tn', label: '총질소 (자외·가시선 분광법)', mobileLabel: 'TN' },
     { id: 'tp', label: '총인(자외·가시선 분광법)', mobileLabel: 'TP' },
@@ -58,17 +73,6 @@ export default function Home() {
     { id: 'phenols', label: '페놀류', mobileLabel: 'Phenols' },
   ];
 
-  const normalTabs = [
-    { id: 'cod', label: 'CODₘₙ (산성과망간산칼륨법)', mobileLabel: 'COD' },
-    { id: 'bod', label: '생물화학적 산소요구량(BOD)', mobileLabel: 'BOD' },
-    { id: 'ss', label: '부유물질(SS)', mobileLabel: 'SS' },
-    { id: 'color', label: '색도(Color)', mobileLabel: 'Color' },
-    { id: 'nh', label: '노말헥산 추출물질(nH)', mobileLabel: 'nH' },
-    { id: 'ph', label: '수소이온농도(PH)', mobileLabel: 'pH' },
-    { id: 'toc', label: '총유기탄소(TOC)', mobileLabel: 'TOC' },
-    { id: 't', label: '탁도(T)', mobileLabel: 'T' },
-    { id: 'tc', label: '총탄소(T.C)', mobileLabel: 'TC' },
-  ];
   const metalTabs = [
     { id: 'metal', label: '금속류 ICP-AES 플로우차트', mobileLabel: 'Metal' },
     { id: 'hg', label: '수은-냉증기-AAS 플로우차트', mobileLabel: 'Hg' },
@@ -130,12 +134,12 @@ export default function Home() {
         categories={categories}
         activeCategory={activeCategory}
         onCategoryChange={(categoryId) => {
-          setActiveCategory(categoryId as 'ion' | 'normal' | 'metal');
+          setActiveCategory(categoryId as 'normal' | 'ion' | 'metal');
           // 카테고리 변경 시 첫 번째 탭으로 이동
-          if (categoryId === 'ion') {
-            setActiveTab('tn');
-          } else if (categoryId === 'normal') {
+          if (categoryId === 'normal') {
             setActiveTab('cod');
+          } else if (categoryId === 'ion') {
+            setActiveTab('tn');
           } else {
             setActiveTab('metal');
           }

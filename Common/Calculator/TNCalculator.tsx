@@ -26,7 +26,6 @@ export default function TNCalculator() {
     { concentration: 4, absorbance: 0 },
     { concentration: 6, absorbance: 0 },
     { concentration: 8, absorbance: 0 },
-    { concentration: 10, absorbance: 0 },
   ]);
 
   const [sampleData, setSampleData] = useState<SampleData>({

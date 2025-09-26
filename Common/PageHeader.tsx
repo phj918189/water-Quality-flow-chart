@@ -14,7 +14,7 @@ export default function PageHeader({ title, subtitle, description }: PageHeaderP
         {subtitle && <p className="text-sm text-gray-600 text-center">{subtitle}</p>}
         {description && <p className="text-sm text-gray-600 text-center">{description}</p>}
       </div>
-      <PrintButton />
+      {/* <PrintButton /> */}
     </header>
   );
 }

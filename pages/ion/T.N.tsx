@@ -107,19 +107,19 @@ export default function TN_UVVis_Oxidation_Flow() {
             <li key={i} className="list-none">
               <AnimatedSection index={i}>
                 <div className="rounded-2xl bg-white p-5 shadow-md ring-1 ring-gray-100">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-gray-900 text-white">
-                    {i + 1}
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-gray-900 text-white">
+                      {i + 1}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-lg font-semibold">{s.title}</h3>
+                      <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-gray-800">
+                        {s.details.map((d, j) => (
+                          <li key={j}>{d}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="text-lg font-semibold">{s.title}</h3>
-                    <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-gray-800">
-                      {s.details.map((d, j) => (
-                        <li key={j}>{d}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
                 </div>
               </AnimatedSection>
             </li>
@@ -129,16 +129,16 @@ export default function TN_UVVis_Oxidation_Flow() {
   );
 }
 
-function ArrowDown() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="h-6 w-6 text-gray-400"
-      aria-hidden
-    >
-      <path d="M12 3a1 1 0 0 1 1 1v12.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.414-1.414L11 16.586V4a1 1 0 0 1 1-1Z" />
-    </svg>
-  );
-}
+// function ArrowDown() {
+//   return (
+//     <svg
+//       xmlns="http://www.w3.org/2000/svg"
+//       viewBox="0 0 24 24"
+//       fill="currentColor"
+//       className="h-6 w-6 text-gray-400"
+//       aria-hidden
+//     >
+//       <path d="M12 3a1 1 0 0 1 1 1v12.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.414-1.414L11 16.586V4a1 1 0 0 1 1-1Z" />
+//     </svg>
+//   );
+// }
